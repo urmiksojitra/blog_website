@@ -1,6 +1,9 @@
 import React from 'react'
-import { Form, Input, InputNumber, Button ,Row, Col} from 'antd';
+import { Form, Input, InputNumber, Select, Tooltip, Button, Row, Col } from 'antd';
 import SiteMap from './SiteMap';
+import { QuestionCircleOutlined } from '@ant-design/icons';
+
+const { Option } = Select;
 
 const layout = {
     labelCol: { span: 8 },
@@ -36,14 +39,19 @@ function Contact_us() {
                         <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email' }]}>
                             <Input />
                         </Form.Item>
-                        <Form.Item name={['user', 'age']} label="Age" rules={[{ type: 'number', min: 0, max: 99 }]}>
-                            <InputNumber />
-                        </Form.Item>
-                        <Form.Item name={['user', 'website']} label="Website">
+                        <Form.Item
+                            name="nickname"
+                            label={<span> Nickname&nbsp;<Tooltip title="What do you want others to call you?"> <QuestionCircleOutlined /> </Tooltip> </span>}
+                            rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
+                        >
                             <Input />
                         </Form.Item>
-                        <Form.Item name={['user', 'introduction']} label="Introduction">
-                            <Input.TextArea />
+                        <Form.Item
+                            name="phone"
+                            label="Phone Number"
+                            rules={[{ required: true, message: 'Please input your phone number!' }]}
+                        >
+                            <Input />
                         </Form.Item>
                         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
                             <Button type="primary" htmlType="submit">Submit</Button>
@@ -51,8 +59,7 @@ function Contact_us() {
                     </Form>
                 </Col>
             </Row>
-
-            <SiteMap/>
+            <SiteMap />
         </div>
     )
 }

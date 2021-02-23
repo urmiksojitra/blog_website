@@ -6,7 +6,7 @@ function Input(props) {
     const { label, name, ...rest } = props
     return (
         <div>
-            <label htmlFor={name}>{label}</label>
+            <label className="label" htmlFor={name}>{label}</label>
             <Field id={name} name={name} {...rest} />
             <ErrorMessage name={name} component={TextError} />
         </div>

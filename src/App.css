@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -41,4 +42,13 @@
 
 .error{
   color: red;
+}
+
+
+.label{
+  color: black;
+}
+
+
+.formtag{
 }
