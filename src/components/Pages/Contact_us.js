@@ -1,7 +1,10 @@
 import React from 'react'
 import { Form, Input, InputNumber, Select, Tooltip, Button, Row, Col } from 'antd';
 import SiteMap from './SiteMap';
+import contactApi from '../../Redux/Action/ContactAction'
+
 import { QuestionCircleOutlined } from '@ant-design/icons';
+import { useDispatch, useSelector } from 'react-redux';
 
 const { Option } = Select;
 
@@ -22,8 +25,13 @@ const validateMessages = {
 };
 
 function Contact_us() {
+
+    const dispatch = useDispatch()
+    const state = useSelector(state => state.ContactData)
+
     const onFinish = (values) => {
         console.log(values);
+        return (dispatch(contactApi(values)))
     };
     return (
         <div>
@@ -36,12 +44,12 @@ function Contact_us() {
                         <Form.Item name={['user', 'name']} label="Name" rules={[{ required: true }]}>
                             <Input />
                         </Form.Item>
-                        <Form.Item name={['user', 'email']} label="Email" rules={[{ type: 'email' }]}>
+                        <Form.Item name={['user', 'email']} label="Mess" rules={[{ type: 'email' }]}>
                             <Input />
                         </Form.Item>
                         <Form.Item
                             name="nickname"
-                            label={<span> Nickname&nbsp;<Tooltip title="What do you want others to call you?"> <QuestionCircleOutlined /> </Tooltip> </span>}
+                            label={<span> Email<Tooltip title="What do you want others to call you?"> </Tooltip> </span>}
                             rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
                         >
                             <Input />

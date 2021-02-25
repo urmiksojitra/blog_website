@@ -1,36 +1,17 @@
-// import React from 'react'
-// import Navbar from '../Layout/Navbar'
-
-// function UserLoginPage() {
-//     return (
-//         <div>
-//         {/* <Navbar/> */}
-//             <h1>UserLogin</h1>
-//         </div>
-//     )
-// }
-
-// export default UserLoginPage
-
-
 import React from 'react'
-
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
-  DesktopOutlined,
   PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
   TableOutlined,
-  EditOutlined
+  EditOutlined,
+  LoginOutlined
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-class UserLoginPage extends React.Component {
+class SidebarPage extends React.Component {
   state = {
     collapsed: false,
   };
@@ -48,15 +29,14 @@ class UserLoginPage extends React.Component {
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1" icon={<PieChartOutlined />}>
-              {/* DeshBord */}
               <Link to="deshbord">DeshBord</Link>
             </Menu.Item>
-            <Menu.Item key="2" icon={<EditOutlined />}>
-              Edit
-            </Menu.Item>
-            <Menu.Item key="9" icon={<TableOutlined />}>
-              {/* Table */}
+            <Menu.Item key="2" icon={<EditOutlined />}>Update Profile</Menu.Item>
+            <Menu.Item key="3" icon={<TableOutlined />}>
               <Link to="tableview">Table</Link>
+            </Menu.Item>
+            <Menu.Item key="4" icon={<LoginOutlined />}>
+              <Link to="login"><a style={{ color:'white' }} onClick={() => localStorage.clear()}>LogOut</a></Link>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -75,4 +55,4 @@ class UserLoginPage extends React.Component {
 }
 
 
-export default UserLoginPage
+export default SidebarPage

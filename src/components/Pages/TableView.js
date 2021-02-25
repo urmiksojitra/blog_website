@@ -1,13 +1,16 @@
 import React from 'react'
-import UserLoginPage from './UserLoginPage'
+import { Redirect } from 'react-router-dom';
+import SidebarPage from './SidebarPage'
 
 function TableView() {
+  
     return (
+        // <SidebarPage>
         <div>
-            <UserLoginPage />
             <h1>ssss</h1>
             {/* </UserLoginPage> */}
         </div>
+        // {/* </SidebarPage > */}
     )
 }
 
