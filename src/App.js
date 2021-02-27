@@ -12,6 +12,7 @@ import RegistrationForm from './components/Formik/RegistrationForm';
 import ForgetPassword from './components/Pages/ForgetPassword';
 import loginApi from './Redux/Action/LoginAction';
 import LogOutPage from './components/Pages/LogOutPage';
+import UpdateProfilePage from './components/Pages/UpdateProfilePage';
 // import SiteMap from './components/SiteMap';
 // import RegisterPage from './components/RegisterPage';
 // import Antd from './Antd'
@@ -34,6 +35,7 @@ function App() {
         <Route exact path='/forgetpassword' component={ForgetPassword} />
         <Route exact path='/userloginpage' component={SidebarPage} />
         <Route exact path='/tableview' component={TableView} />
+        <Route exact path='/updateprofilepage' component={UpdateProfilePage} />
         <Route exact path='/deshbord' component={DeshBord} />
         <Route exact path='/logoutpage' component={LogOutPage} />
       </Switch>

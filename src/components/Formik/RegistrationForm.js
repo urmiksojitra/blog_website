@@ -57,8 +57,7 @@ function RegistrationForm() {
             .min(6, 'pincode must be 6 characters')
             .max(6, 'pincode must be 6 characters')
             .required("PinCode required *"),
-        email: Yup.string().email('invalid email formate')
-            .required('Please input your email!')
+        email: Yup.string().email('invalid email formate').required('Please input your email!')
             .required('Email is required'),
         password: Yup.string()
             .min(6, 'Password must be at least 6 characters')

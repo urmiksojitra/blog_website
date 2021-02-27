@@ -5,12 +5,12 @@ import SidebarPage from './SidebarPage'
 function TableView() {
   
     return (
-        // <SidebarPage>
+        <SidebarPage>
         <div>
-            <h1>ssss</h1>
+            <h1>Show Table</h1>
             {/* </UserLoginPage> */}
         </div>
-        // {/* </SidebarPage > */}
+         </SidebarPage >
     )
 }
 
