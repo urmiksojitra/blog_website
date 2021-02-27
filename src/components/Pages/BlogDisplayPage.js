@@ -11,7 +11,7 @@ function BlogDisplayPage() {
     const state = useSelector(state => state.BlogDisplayReducer.user)
     const dispatch = useDispatch()
     const token = localStorage.getItem("token")
-
+console.log(state,'blog page')
     useEffect   (() => {
         dispatch(blogDisplayApi(token))
     }, [])
