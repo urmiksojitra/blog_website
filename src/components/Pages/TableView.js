@@ -12,7 +12,7 @@ function TableView() {
     const { Column, ColumnGroup } = Table
 
     const state = useSelector(state => state.BlogDisplayReducer.user)
-    console.log(state, 'Table call')
+    // console.log(state, 'Table call')
     // const dispatch = useDispatch()
     const data = [
         {
@@ -45,26 +45,27 @@ function TableView() {
             <div>
                 <h1>Show Table</h1>
                 {/* </UserLoginPage> */}
-                <Table dataSource={state}>
 
-                    {/* <Column title="blogImgSrc" dataIndex="blogImgSrc" key="blogImgSrc" /> */}
-                    {state&&state.map(data=>  <Column title="avatar"> <Avatar src={data.blogImgSrc} /></Column>)}
-                    <Column title="blogTitle" dataIndex="blogTitle" key="agblogTitlee" />
-                    <Column title="desc" dataIndex="desc" key="desc" />
-                    <Column
-                        title="Action"
-                        key="action"
-                        render={(text, record) => (
-                            <Space size="middle">
-                                <a>Invite {record.lastName}</a>
-                                <a>Delete</a>
-                            </Space>
-                        )}
-                    />
-                </Table>
-                {state&&state.map(data=> <Avatar src={data.blogImgSrc} />)}
-                
-                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Blog Picture</th>
+                            <th scope="col">Blog Name</th>
+                            <th scope="col">Blog Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {state && state.map(data => {
+                            return (<tr>
+                                <td><Avatar src={data.blogImgSrc} /></td>
+                                <td>{data.blogTitle}</td>
+                                <td>{data.desc}</td>
+                            </tr>)
+                        })}
+                    </tbody>
+                </table>
+
             </div>
         </SidebarPage >
     )

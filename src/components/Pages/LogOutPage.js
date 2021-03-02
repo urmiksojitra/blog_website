@@ -4,14 +4,14 @@ import { Redirect } from 'react-router-dom';
 function LogOutPage() {
     let status = true;
     const token = localStorage.getItem("token");
-    console.log(token);
+    // console.log(token);
     if (token === null) {
-        console.log(status, "status");
+        // console.log(status, "status");
         status = false;
     }
 
     if (status === false) {
-        console.log(status, "status");
+        // console.log(status, "status");
         return <Redirect to="/login" />;
     }
     return (

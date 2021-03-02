@@ -7,12 +7,12 @@ import {
     ADD_USER
 } from "../Type/BlogDisplayType"
 
-const initialState = {
-    BlogDisplayData: []
+const blogState = {
+    BlogData: []
 
 }
 
-export const BlogDisplayReducer = (state = initialState, action) => {
+export const BlogDisplayReducer = (state = blogState, action) => {
     switch (action.type) {
         case DISPLAY_BLOG_USERS_REQUEST:
             return {
@@ -21,19 +21,19 @@ export const BlogDisplayReducer = (state = initialState, action) => {
             }
 
         case DISPLAY_BLOG_USERS_SUCCESS:
-            toast.success("Login Success")
-            console.log("success called");
+            // console.log("success called");
+            // console.log(action.payload);
             return {
                 ...state,
                 loading: false,
-                user: action.payload, 
+                BlogData: action.payload, 
                 error: ""
             }
 
         case DISPLAY_BLOG_USERS_FAILURE:
             return {...state,
                 loading: false,
-                user: [],
+                BlogData: [],
                 error: action.payload
             }
         

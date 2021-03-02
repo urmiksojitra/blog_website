@@ -7,7 +7,7 @@ import {
     ADD_USER
 } from "../Type/ContactType"
 
-const initialState = {
+export const initialState = {
     ContactData: []
 
 }
@@ -21,19 +21,17 @@ export const ContactReducer = (state = initialState, action) => {
             }
 
         case CONTACT_USERS_SUCCESS:
-            toast.success("Login Success")
-            console.log("success called");
             return {
                 ...state,
                 loading: false,
-                user: action.payload, 
+                ContactData: action.payload, 
                 error: ""
             }
 
         case CONTACT_USERS_FAILURE:
             return {...state,
                 loading: false,
-                user: [],
+                ContactData: [],
                 error: action.payload
             }
         

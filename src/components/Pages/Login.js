@@ -27,7 +27,7 @@ function Login() {
 
     const onFinish = (data) => {
         dispatch(loginApi(data))
-        console.log(data);
+        // console.log(data);
 
         setTimeout(() => {
             loginStatus()
@@ -37,19 +37,19 @@ function Login() {
 
     const loginStatus = () => {
         const ticket = localStorage.getItem("login")
-        console.log(ticket);
+        // console.log(ticket);
         if (ticket) {
             setData({
                 ...data, status: true,
             })
-            console.log("logi status", data)
+            // console.log("logi status", data)
         }
     }
 
-    const onReset = () => {
+  /*   const onReset = () => {
         form.resetFdields();
-    };
-    console.log(data)
+    }; */
+    // console.log(data)
 
     const handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
@@ -57,14 +57,14 @@ function Login() {
 
     let st = true;
     const token = localStorage.getItem("token");
-    console.log(token);
+    // console.log(token);
     if (token !== null) {
-        console.log(st, "status");
+        // console.log(st, "status");
         st = false;
     }
 
     if (st === false) {
-        console.log(st, "status");
+        // console.log(st, "status");
         return <Redirect to="/deshbord" />;
     }
 

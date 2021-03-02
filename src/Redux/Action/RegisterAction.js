@@ -30,24 +30,15 @@ export const newUsersFailure = error => {
 
 export default function registerApi(newdata) {
     return dispatch => {
-        console.log('api')
+        // console.log('api')
         dispatch(newUsersRequest())
         axios.post('http://localhost:3003/userData',newdata)
             .then(res => {
                 var user = res.data
-                // var user1 = user.find(values => values.name === data1.name && values.password === data1.password)
-                // if (user1 === undefined) {
-                //     throw (res.error)
-                // }
-                // localStorage.setItem('login', JSON.stringify(true))
-                // localStorage.setItem('user', JSON.stringify(user1))
-                // localStorage.setItem('token', (user1.id))
                 dispatch(newUsersSuccess(user))
-                // toast.success("Login Success");
                 return res.data;
             }).catch(error => {
                 dispatch(newUsersFailure("UserName or Password "));
-                //  toast.error();("Login Succ5ess");
             })
     }
 }

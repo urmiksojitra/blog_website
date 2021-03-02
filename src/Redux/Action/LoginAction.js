@@ -30,7 +30,7 @@ export const fetchUsersFailure = error => {
 
 export default function loginApi(data1) {
     return dispatch => {
-        console.log('api')
+        // console.log('api')
         dispatch(fetchUsersRequest())
         axios.get('http://localhost:3003/userData')
             .then(res => {

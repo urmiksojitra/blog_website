@@ -1,38 +1,37 @@
 import { toast } from 'react-toastify';
 
 import {
-    REGISTER_USERS_FAILURE,
-    REGISTER_USERS_REQUEST,
-    REGISTER_USERS_SUCCESS,
+    COMMENTS_USERS_FAILURE,
+    COMMENTS_USERS_REQUEST,
+    COMMENTS_USERS_SUCCESS,
     ADD_USER
-} from "../Type/RegisterType"
+} from "../Type/CommentsType"
 
-const initialState = {
-    RegisterData: []
+export const commentState = {
+    CommentsData: []
 
 }
 
-export const RegisterReducer = (state = initialState, action) => {
+export const CommentsReducer = (state = commentState, action) => {
     switch (action.type) {
-        case REGISTER_USERS_REQUEST:
+        case COMMENTS_USERS_REQUEST:
             return {
                 ...state,
                 loading: true
             }
 
-        case REGISTER_USERS_SUCCESS:
-            // console.log("success called");
+        case COMMENTS_USERS_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                RegisterData: action.payload, 
+                CommentsData: action.payload, 
                 error: ""
             }
 
-        case REGISTER_USERS_FAILURE:
+        case COMMENTS_USERS_FAILURE:
             return {...state,
                 loading: false,
-                RegisterData: [],
+                CommentsData: [],
                 error: action.payload
             }
         

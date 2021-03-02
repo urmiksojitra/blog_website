@@ -15,6 +15,7 @@ function RegistrationForm() {
 
     const options = [
         { key: 'B.COM', value: 'B.COM' },
+        { key: 'B.COM', value: 'B.COM' },
         { key: 'BCA', value: 'BCA' },
         { key: 'B.B.A', value: 'B.B.A' }
     ]
@@ -50,8 +51,8 @@ function RegistrationForm() {
     const validationSchema = Yup.object({
         name: Yup.string().min(2, 'Minmum 3 char').max(10, 'very longer,please maximum 10 char').required("Please input your name!"),
         phoneNo: Yup.string()
-            .typeError("Only Number Allowed")
-            .required('Mobile Number is must be 10 characters required'),
+            .typeError("Only Number Allowed").max(10,'Mobile Number is must be 10 characters')
+            .required('Mobile Number is required'),
         pinCode: Yup.string()
             // .typeError("Only Number Allowed")
             .min(6, 'pincode must be 6 characters')
@@ -74,19 +75,19 @@ function RegistrationForm() {
         skill: Yup.array().required("skill required *"),
     })
     const onSubmit = values => {
-        console.log('formikd data', values)
+        // console.log('formikd data', values)
         return (dispatch(registerApi(values)))
     }
     let st = true;
     const token = localStorage.getItem("token");
-    console.log(token);
+    // console.log(token);
     if (token !== null) {
-        console.log(st, "status");
+        // console.log(st, "status");
         st = false;
     }
 
     if (st === false) {
-        console.log(st, "status");
+        // console.log(st, "status");
         return <Redirect to="/deshbord" />;
     }
     return (

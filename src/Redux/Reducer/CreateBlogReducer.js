@@ -21,19 +21,18 @@ export const CreateBlogReducer = (state = initialState, action) => {
             }
 
         case CREATEBLOG_USERS_SUCCESS:
-            toast.success("Login Success")
-            console.log("success called");
+            // console.log("success called");
             return {
                 ...state,
                 loading: false,
-                user: action.payload, 
+                CreateBlogData: action.payload, 
                 error: ""
             }
 
         case CREATEBLOG_USERS_FAILURE:
             return {...state,
                 loading: false,
-                user: [],
+                CreateBlogData: [],
                 error: action.payload
             }
         
