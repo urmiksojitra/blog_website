@@ -17,7 +17,7 @@ export const BlogDisplayReducer = (state = blogState, action) => {
         case DISPLAY_BLOG_USERS_REQUEST:
             return {
                 ...state,
-                loading: true
+                loading: true    
             }
 
         case DISPLAY_BLOG_USERS_SUCCESS:

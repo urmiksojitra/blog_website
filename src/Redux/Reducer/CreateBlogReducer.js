@@ -21,7 +21,7 @@ export const CreateBlogReducer = (state = initialState, action) => {
             }
 
         case CREATEBLOG_USERS_SUCCESS:
-            // console.log("success called");
+            console.log("success called");
             return {
                 ...state,
                 loading: false,

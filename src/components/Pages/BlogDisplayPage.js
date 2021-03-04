@@ -10,56 +10,38 @@ function BlogDisplayPage() {
     const { Meta } = Card;
     const [visible, setVisible] = React.useState(false);
     const [confirmLoading, setConfirmLoading] = React.useState(false);
-    // const [modalText, setModalText] = React.useState('Content of the modal');
-    // const [blog, setBlog] = useState({})
     const [comments, setComments] = useState({
-        comment:'',
-        blog_id:'',
-        user_id:token,
+        comment: '',
+        blog_id: '',
+        user_id: token,
     })
+
     const dispatch = useDispatch()
+
     const commitHendler = (id) => {
         setVisible(true);
-        setComments({ ...comments, blog_id: id})
+        setComments({ ...comments, blog_id: id })
     };
 
-
     const handleOk = () => {
-        // setModalText('The modal will be closed after two seconds');
         setConfirmLoading(true);
         setTimeout(() => {
             setConfirmLoading(false);
             dispatch(commentsApi(comments))
             setVisible(false);
-            setComments({comment:''})
+            setComments({ comment: '' })
         }, 2000);
     };
 
     const handleCancel = () => {
-        // console.log('Clicked cancel button');
         setVisible(false);
     };
 
-
     const user = useSelector(state => state.BlogDisplayReducer.BlogData)
-    console.log("yuser user ", user);
     const [state, setstate] = useState()
-
-    
-    // console.log(user, 'blog page')
-
     useEffect(() => {
         dispatch(blogDisplayApi())
     }, [])
-   /*  useEffect(() => {
-        // console.log('@@@@@@@@@');
-        dispatch(blogDisplayApi())
-        // console.log("statestatestate 1st", state);
-    }, [comments.comment]) */
-    // useEffect(() => {
-    //     setstate(user)
-    //     console.log("statestatestate 2nd", state);
-    // }, [user])
 
     const deleteHandler = (id) => {
         dispatch(deleteApi(id))
@@ -88,7 +70,6 @@ function BlogDisplayPage() {
                                 <Badge count={2}> <Button type="primary" onClick={() => console.log("like")} shape="round" icon={<LikeOutlined />} size={"middle"} /></Badge>,
                                 <Button type="primary" shape="round" icon={<DislikeOutlined />} size={"middle"} />,
                                 <Button type="primary" name='comment' onClick={() => commitHendler(data.id)} shape="round" icon={<EditOutlined />} size={"middle"} />,
-
                                 <Button type="primary" onClick={() => deleteHandler(data.id)} shape="round" icon={<DeleteOutlined />} size={"middle"} />,
                             ]}>
                             <Meta key={index}
@@ -96,7 +77,6 @@ function BlogDisplayPage() {
                                 description={data.desc}
                             />
                         </Card>
-
                         <Modal
                             style={{ width: '10px' }}
                             title="Title"
@@ -106,7 +86,7 @@ function BlogDisplayPage() {
                             onCancel={handleCancel}
                         > <form>
                                 <label>Comment:-</label><br />
-                                <input onChange={(e)=>commentHandler(e)} value={comments.comment} name="blogTitle"></input><br /><br />
+                                <input onChange={(e) => commentHandler(e)} value={comments.comment} name="blogTitle"></input><br /><br />
                             </form>
                         </Modal>
                     </div>
