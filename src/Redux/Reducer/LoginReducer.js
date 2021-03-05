@@ -22,7 +22,6 @@ export const LoginReducer = (state = initialState, action) => {
 
         case FETCH_USERS_SUCCESS:
             toast.success("Login Success")
-            // console.log("success called");
             return {
                 ...state,
                 loading: false,
@@ -32,7 +31,6 @@ export const LoginReducer = (state = initialState, action) => {
 
         case FETCH_USERS_FAILURE:
             toast.error("invalid username ")
-            // console.log("reducer failer")
             return {...state,
                 loading: false,
                 loginData: [],

@@ -30,14 +30,11 @@ export const createBlogUsersFailure = error => {
 
 
 export default function createBlogApi(blogData) {
-    // console.log(blogData)
     return dispatch => {
-        // console.log('api')
         dispatch(createBlogUsersRequest())
         axios.post('http://localhost:3003/blogData', blogData)
             .then(res => {
                 var user = res.data
-                // console.log(user);
                 dispatch(createBlogUsersSuccess(user))
                 dispatch(blogDisplayApi())
                 return res.data

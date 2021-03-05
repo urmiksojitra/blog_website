@@ -30,7 +30,6 @@ function Contact_us() {
     const state = useSelector(state => state.ContactData)
 
     const onFinish = (values) => {
-        // console.log(values);
         return (dispatch(contactApi(values)))
     };
     return (

@@ -28,9 +28,7 @@ export const commentsUsersFailure = error => {
 
 
 export default  function commentsApi(commentsdata) {
-    // console.log(commentsdata);
     return dispatch => {
-        // console.log('api')
         dispatch(commentsUsersRequest())
         axios.post('http://localhost:3003/comments',commentsdata)
             .then(res => {
@@ -45,7 +43,6 @@ export default  function commentsApi(commentsdata) {
 // export function userComment(contact) {
 //     return dispatch => {
 //         dispatch(userCommentRequest())
-//          console.log(contact);
 //         axios.post('http://localhost:3003/comments',contact)
 //             .then(res => {
 //                 var cUser = res.data

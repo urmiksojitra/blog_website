@@ -21,7 +21,6 @@ export const RegisterReducer = (state = initialState, action) => {
             }
 
         case REGISTER_USERS_SUCCESS:
-            console.log("success called");
             return {
                 ...state,
                 loading: false,

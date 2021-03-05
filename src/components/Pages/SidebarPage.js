@@ -17,7 +17,6 @@ class SidebarPage extends React.Component {
   };
 
   onCollapse = collapsed => {
-    // console.log(collapsed);
     this.setState({ collapsed });
   };
 
@@ -47,7 +46,7 @@ class SidebarPage extends React.Component {
               {this.props.children}
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          <Footer style={{ textAlign: 'center' }}>Design ©2021 Created by Devloper</Footer>
         </Layout>
       </Layout>
     );

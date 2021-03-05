@@ -7,7 +7,6 @@ function TableView() {
     const { Column, ColumnGroup } = Table
 
     const state = useSelector(state => state.BlogDisplayReducer.user)
-    console.log(state,'Called blog table')
     return (
         <SidebarPage>
             <div>

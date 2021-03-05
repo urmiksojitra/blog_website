@@ -29,9 +29,7 @@ export const blogDisplayUsersFailure = error => {
 
 
 export function blogDisplayApi() {
-    // console.log(blogDataDisplay)
     return dispatch => {
-        // console.log('api')
         dispatch(blogDisplayUsersRequest())
         axios.get('http://localhost:3003/blogData')
             .then(res => {

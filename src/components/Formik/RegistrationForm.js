@@ -75,19 +75,15 @@ function RegistrationForm() {
         skill: Yup.array().required("skill required *"),
     })
     const onSubmit = values => {
-        // console.log('formikd data', values)
         return (dispatch(registerApi(values)))
     }
     let st = true;
     const token = localStorage.getItem("token");
-    // console.log(token);
     if (token !== null) {
-        // console.log(st, "status");
         st = false;
     }
 
     if (st === false) {
-        // console.log(st, "status");
         return <Redirect to="/deshbord" />;
     }
     return (

@@ -17,7 +17,6 @@ function BlogDisplayPage() {
     })
 
     const dispatch = useDispatch()
-
     const commitHendler = (id) => {
         setVisible(true);
         setComments({ ...comments, blog_id: id })

@@ -15,19 +15,16 @@ function DeshBord() {
     const user = localStorage.getItem("user");
     const abc = JSON.parse(user);
     if (token === null) {
-        console.log(status, "status");
         status = false;
     }
 
     if (status === false) {
-        console.log(status, "status");
         return <Redirect to="/" />;
     }
 
     return (
         <div>
             <SidebarPage>
-                {console.log('Hello')}
                 <div align="center">
                     <h1>Welcome {abc.name}</h1>
                 </div>

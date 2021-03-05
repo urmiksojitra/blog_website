@@ -15,7 +15,6 @@ function CreateBlogPage() {
     const abc = JSON.parse(user);
 
     const state = useSelector(state => state)
-    // console.log(state,'state');
     const dispatch = useDispatch()
 
     const showModal = () => {
@@ -33,7 +32,6 @@ function CreateBlogPage() {
     };
 
     const handleCancel = () => {
-        // console.log('Clicked cancel button');
         setVisible(false);
     };
     const changeHandler = (e) => {
@@ -44,7 +42,6 @@ function CreateBlogPage() {
         reader.onloadend = () => {
             setBlog({ ...blog, blogImgSrc: reader.result });
             //setFieldValue('blogImgSrc', reader.result);
-            // console.log(reader);
         };
         reader.readAsDataURL(e.target.files[0]);
     }

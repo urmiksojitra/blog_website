@@ -6,7 +6,6 @@ function UpdateProfilePage() {
     const user = localStorage.getItem("user");
     const abc = JSON.parse(user);
 
-    // console.log(abc);
     return (
         <SidebarPage>
             <div>

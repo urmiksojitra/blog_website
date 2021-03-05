@@ -62,8 +62,6 @@ function formikContainer() {
         // skill: Yup.string().required('Required'),
 
     })
-    // console.log(initialValues);
-    // const onsubmit = values => console.log(values);
     const onSubmit = values => { return (console.log('formikd data', values)) }
     return (
         <>

@@ -69,11 +69,9 @@ export default App;
 //       body: JSON.stringify(payload)
 //     }).then(res => res.json())
 //       .then((data) => {
-//         console.log(data)
 //         this.setState({ resData: data.token, isAuthenticated: true })
 //       },
 //         (error) => {
-//           console.log(error)
 //           this.setState({
 //             isAuthenticated: false,
 //             resData: 'No Data Found From Server'

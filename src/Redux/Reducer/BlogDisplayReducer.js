@@ -21,8 +21,6 @@ export const BlogDisplayReducer = (state = blogState, action) => {
             }
 
         case DISPLAY_BLOG_USERS_SUCCESS:
-            // console.log("success called");
-            // console.log(action.payload);
             return {
                 ...state,
                 loading: false,

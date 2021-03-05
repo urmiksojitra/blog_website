@@ -32,7 +32,6 @@ export const contactUsersFailure = error => {
 
 export default function contactApi(contactData) {
     return dispatch => {
-        // console.log('api')
         dispatch(contactUsersRequest())
         axios.post('http://localhost:3003/Contact',contactData)
             .then(res => {

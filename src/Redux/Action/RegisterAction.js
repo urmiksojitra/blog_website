@@ -30,7 +30,6 @@ export const newUsersFailure = error => {
 
 export default function registerApi(newdata) {
     return dispatch => {
-        // console.log('api')
         dispatch(newUsersRequest())
         axios.post('http://localhost:3003/userData',newdata)
             .then(res => {
