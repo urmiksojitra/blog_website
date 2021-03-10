@@ -1,0 +1,8 @@
+.App {
+  font-family: sans-serif;
+}
+.read-more-less--more,
+.read-more-less--less {
+  color: blue;
+  font-size: 15px;
+}

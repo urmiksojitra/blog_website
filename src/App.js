@@ -1,22 +1,22 @@
-import './App.css';
-import 'antd/dist/antd.css';
-import { Route, Switch } from 'react-router-dom'
-import Home from './components/Pages/Home';
-import Contact_us from './components/Pages/Contact_us';
-import Login from './components/Pages/Login';
-import Navbar from './Layout/Navbar';
-import SidebarPage from './components/Pages/SidebarPage';
-import TableView from './components/Pages/TableView';
-import DeshBord from './components/Pages/DeshBord';
-import RegistrationForm from './components/Formik/RegistrationForm';
-import ForgetPassword from './components/Pages/ForgetPassword';
-import loginApi from './Redux/Action/LoginAction';
-import LogOutPage from './components/Pages/LogOutPage';
-import UpdateProfilePage from './components/Pages/UpdateProfilePage';
+import "./App.css";
+import "antd/dist/antd.css";
+import { Route, Switch } from "react-router-dom";
+import Home from "./components/Pages/Home";
+import Demo from "./Demo";
+import Contact_us from "./components/Pages/Contact_us";
+import Login from "./components/Pages/Login";
+import Navbar from "./Layout/Navbar";
+import SidebarPage from "./components/Pages/SidebarPage";
+import TableView from "./components/Pages/TableView";
+import DeshBord from "./components/Pages/DeshBord";
+import RegistrationForm from "./components/Formik/RegistrationForm";
+import ForgetPassword from "./components/Pages/ForgetPassword";
+import loginApi from "./Redux/Action/LoginAction";
+import LogOutPage from "./components/Pages/LogOutPage";
+import UpdateProfilePage from "./components/Pages/UpdateProfilePage";
 // import SiteMap from './components/SiteMap';
 // import RegisterPage from './components/RegisterPage';
 // import Antd from './Antd'
-
 
 function App() {
   // loginApi()
@@ -25,19 +25,20 @@ function App() {
       {/* <Antd /> */}
       {/* <LoginPage/> */}
       {/* <SiteMap /> */}
+      {/* <Demo/> */}
       <Navbar />
 
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/contact' component={Contact_us} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/registrationForm' component={RegistrationForm} />
-        <Route exact path='/forgetpassword' component={ForgetPassword} />
-        <Route exact path='/userloginpage' component={SidebarPage} />
-        <Route exact path='/tableview' component={TableView} />
-        <Route exact path='/updateprofilepage' component={UpdateProfilePage} />
-        <Route exact path='/deshbord' component={DeshBord} />
-        <Route exact path='/logoutpage' component={LogOutPage} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/contact" component={Contact_us} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/registrationForm" component={RegistrationForm} />
+        <Route exact path="/forgetpassword" component={ForgetPassword} />
+        <Route exact path="/userloginpage" component={SidebarPage} />
+        <Route exact path="/tableview" component={TableView} />
+        <Route exact path="/updateprofilepage" component={UpdateProfilePage} />
+        <Route exact path="/deshbord" component={DeshBord} />
+        <Route exact path="/logoutpage" component={LogOutPage} />
       </Switch>
     </div>
   );
@@ -84,7 +85,6 @@ export default App;
 //         <div>
 //           <h1>Request return {this.state.resData}</h1>
 
-
 //         </div>
 //       )
 //     }
@@ -95,4 +95,3 @@ export default App;
 // }
 
 // export default App
-

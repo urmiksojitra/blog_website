@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb } from "antd";
 import {
   DesktopOutlined,
   PieChartOutlined,
   FileOutlined,
   TeamOutlined,
   UserOutlined,
-} from '@ant-design/icons';
+} from "@ant-design/icons";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -17,17 +17,17 @@ class Antd extends React.Component {
     collapsed: false,
   };
 
-  onCollapse = collapsed => {
+  onCollapse = (collapsed) => {
     this.setState({ collapsed });
   };
 
   render() {
     const { collapsed } = this.state;
     return (
-      <Layout style={{ minHeight: '100vh' }}>
+      <Layout style={{ minHeight: "100vh" }}>
         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
             {/* <Menu.Item key="1" icon={<PieChartOutlined />}>
               Option 1
             </Menu.Item>
@@ -50,8 +50,8 @@ class Antd extends React.Component {
         </Sider>
         <Layout className="site-layout">
           <Header className="site-layout-background" style={{ padding: 0 }} />
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
+          <Content style={{ margin: "0 16px" }}>
+            <Breadcrumb style={{ margin: "16px 0" }}>
               {/* <Breadcrumb.Item>User</Breadcrumb.Item>
               <Breadcrumb.Item>Bill</Breadcrumb.Item> */}
             </Breadcrumb>
@@ -59,11 +59,11 @@ class Antd extends React.Component {
               Bill is a cat.
             </div> */}
           </Content>
-          <Footer style={{ textAlign: 'center' }}> Created by UI</Footer>
+          <Footer style={{ textAlign: "center" }}> Created by UI</Footer>
         </Layout>
       </Layout>
     );
   }
 }
 
-export default Antd
+export default Antd;
