@@ -44,3 +44,11 @@
 .label {
   color: black;
 }
+.blog-title {
+  color: red;
+  font-style: initial;
+  font-size: 16px;
+}
+.readmore-title {
+  color: #1890ff;
+}

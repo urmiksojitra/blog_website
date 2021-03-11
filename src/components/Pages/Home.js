@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fecthLike, likeBlogApi } from "../../Redux/Action/LikeDislikeAction";
 import { allBlogdisplatApi } from "../../Redux/Action/BlogDisplayAction";
 
+import ReactReadMoreReadLess from "react-read-more-read-less";
+
 // import { Carousel } from 'antd';
 
 const contentStyle = {
@@ -150,19 +152,22 @@ function Home() {
                     icon={<EditOutlined />}
                     size={"middle"}
                   />,
-                  <Button
-                    type="primary"
-                    shape="round"
-                    icon={<DeleteOutlined />}
-                    size={"middle"}
-                  />,
                 ]}
               >
                 <Meta
                   key={index}
-                  title={data.blogTitle}
-                  description={data.desc}
-                />
+                  title={<div className="blog-title">{data.blogTitle}</div>}
+                  // description={data.desc}
+                ></Meta>
+                <ReactReadMoreReadLess
+                  charLimit={40}
+                  readMoreText={"Read more"}
+                  readLessText={"Read less"}
+                  readMoreClassName="read-more-less--more"
+                  readLessClassName="read-more-less--less"
+                >
+                  {data.desc}
+                </ReactReadMoreReadLess>
               </Card>
             </div>
           );

@@ -42,7 +42,7 @@ function UpdateProfilePage() {
         </label>
         <br />
         <label>
-          hobby:-<span>{abc.hobby[0]}</span>
+          hobby:-<span>{abc.hobby}</span>
         </label>
         <br />
         <label>

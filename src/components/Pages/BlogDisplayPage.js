@@ -13,6 +13,7 @@ import {
 } from "../../Redux/Action/BlogDisplayAction";
 import commentsApi from "../../Redux/Action/CommentsAction";
 import { fecthLike, likeBlogApi } from "../../Redux/Action/LikeDislikeAction";
+import ReactReadMoreReadLess from "react-read-more-read-less";
 
 function BlogDisplayPage() {
   const token = localStorage.getItem("token");
@@ -94,6 +95,14 @@ function BlogDisplayPage() {
             >
               <Card
                 style={{ width: "300px" }}
+                // style={{
+                //   backgroundColor: "rgba(255, 255, 255, 0.0)",
+                //   border: 0,
+                // }}
+                headStyle={{
+                  backgroundColor: "rgba(F,F,F,1)",
+                  border: 0,
+                }}
                 cover={
                   <img
                     style={{ height: "300px" }}
@@ -159,9 +168,20 @@ function BlogDisplayPage() {
               >
                 <Meta
                   key={index}
-                  title={data.blogTitle}
-                  description={data.desc}
-                />
+                  title={<div className="blog-title">{data.blogTitle}</div>}
+                  // description={data.desc}
+                ></Meta>
+                <ReactReadMoreReadLess
+                  charLimit={40}
+                  readMoreText={
+                    <div className="readmore-title">{"...Read more"}</div>
+                  }
+                  readLessText={"Read less"}
+                  readMoreClassName="read-more-less--more"
+                  readLessClassName="read-more-less--less"
+                >
+                  {data.desc}
+                </ReactReadMoreReadLess>
               </Card>
               <Modal
                 style={{ width: "10px" }}

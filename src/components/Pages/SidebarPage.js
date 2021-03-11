@@ -61,7 +61,7 @@ class SidebarPage extends React.Component {
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            Design ©2021 Created by Devloper
+            Design ©2021 Created by Sojitra Infotech
           </Footer>
         </Layout>
       </Layout>

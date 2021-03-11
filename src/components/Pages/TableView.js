@@ -3,6 +3,8 @@ import SidebarPage from "./SidebarPage";
 import { Table, Tag, Space } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import Avatar from "antd/lib/avatar/avatar";
+import ReactReadMoreReadLess from "react-read-more-read-less";
+
 function TableView() {
   const { Column, ColumnGroup } = Table;
 
@@ -29,7 +31,16 @@ function TableView() {
                       <Avatar src={data.blogImgSrc} />
                     </td>
                     <td>{data.blogTitle}</td>
-                    <td>{data.desc}</td>
+                    {/* <td>{data.desc}</td> */}
+                    <ReactReadMoreReadLess
+                      charLimit={40}
+                      // readMoreText={"Read more"}
+                      // readLessText={"Read less"}
+                      // readMoreClassName="read-more-less--more"
+                      // readLessClassName="read-more-less--less"
+                    >
+                      {data.desc}
+                    </ReactReadMoreReadLess>
                   </tr>
                 );
               })}

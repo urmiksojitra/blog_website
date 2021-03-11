@@ -31,7 +31,6 @@ export function likeBlogApi(data) {
       .then((res) => {
         // debugger
         var data1 = res.data;
-
         var userData = data1.find(
           (values) =>
             values.user_id === data.user_id && values.blog_id === data.blog_id
