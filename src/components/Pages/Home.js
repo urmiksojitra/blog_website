@@ -94,7 +94,7 @@ function Home() {
           return (
             <div
               className="col-md-3 p-3"
-              style={{ marginBottom: "15px", marginLeft: "30px" }}
+              style={{ marginBottom: "50px",marginTop:'20px',marginLeft:"20px"}}
             >
               <Card
                 style={{ width: "300px" }}
@@ -105,54 +105,54 @@ function Home() {
                     src={data.blogImgSrc}
                   />
                 }
-                actions={[
-                  <Badge
-                    count={
-                      statusState
-                        ? statusState.filter(
-                            (point) =>
-                              point.blog_id === data.id &&
-                              point.status === "like"
-                          ).length
-                        : 0
-                    }
-                  >
-                    <Button
-                      type="primary"
-                      onClick={() => statusHandler(data.id, "like")}
-                      shape="round"
-                      icon={<LikeOutlined />}
-                      size={"middle"}
-                    />
-                  </Badge>,
-                  <Badge
-                    count={
-                      statusState
-                        ? statusState.filter(
-                            (point) =>
-                              point.blog_id === data.id &&
-                              point.status === "dislike"
-                          ).length
-                        : 0
-                    }
-                  >
-                    <Button
-                      type="primary"
-                      onClick={() => statusHandler(data.id, "dislike")}
-                      shape="round"
-                      icon={<DislikeOutlined />}
-                      size={"middle"}
-                    />
-                  </Badge>,
-                  <Button
-                    type="primary"
-                    name="comment"
-                    onClick={() => commitHendler(data.id)}
-                    shape="round"
-                    icon={<EditOutlined />}
-                    size={"middle"}
-                  />,
-                ]}
+                // actions={[
+                //   <Badge
+                //     count={
+                //       statusState
+                //         ? statusState.filter(
+                //             (point) =>
+                //               point.blog_id === data.id &&
+                //               point.status === "like"
+                //           ).length
+                //         : 0
+                //     }
+                //   >
+                //     <Button
+                //       type="primary"
+                //       onClick={() => statusHandler(data.id, "like")}
+                //       shape="round"
+                //       icon={<LikeOutlined />}
+                //       size={"middle"}
+                //     />
+                //   </Badge>,
+                //   <Badge
+                //     count={
+                //       statusState
+                //         ? statusState.filter(
+                //             (point) =>
+                //               point.blog_id === data.id &&
+                //               point.status === "dislike"
+                //           ).length
+                //         : 0
+                //     }
+                //   >
+                //     <Button
+                //       type="primary"
+                //       onClick={() => statusHandler(data.id, "dislike")}
+                //       shape="round"
+                //       icon={<DislikeOutlined />}
+                //       size={"middle"}
+                //     />
+                //   </Badge>,
+                //   <Button
+                //     type="primary"
+                //     name="comment"
+                //     onClick={() => commitHendler(data.id)}
+                //     shape="round"
+                //     icon={<EditOutlined />}
+                //     size={"middle"}
+                //   />,
+                // ]}
               >
                 <Meta
                   key={index}

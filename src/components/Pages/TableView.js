@@ -19,7 +19,7 @@ function TableView() {
             <tr>
               <th scope="col">Blog Picture</th>
               <th scope="col">Blog Name</th>
-              <th scope="col">Blog Description</th>
+              {/* <th scope="col">Blog Description</th> */}
             </tr>
           </thead>
           <tbody>
@@ -32,15 +32,15 @@ function TableView() {
                     </td>
                     <td>{data.blogTitle}</td>
                     {/* <td>{data.desc}</td> */}
-                    <ReactReadMoreReadLess
+                    {/* <ReactReadMoreReadLess
                       charLimit={40}
-                      // readMoreText={"Read more"}
-                      // readLessText={"Read less"}
-                      // readMoreClassName="read-more-less--more"
-                      // readLessClassName="read-more-less--less"
+                      readMoreText={"Read more"}
+                      readLessText={"Read less"}
+                      readMoreClassName="read-more-less--more"
+                      readLessClassName="read-more-less--less"
                     >
                       {data.desc}
-                    </ReactReadMoreReadLess>
+                    </ReactReadMoreReadLess> */}
                   </tr>
                 );
               })}

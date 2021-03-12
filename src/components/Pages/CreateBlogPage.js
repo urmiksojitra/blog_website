@@ -73,7 +73,7 @@ function CreateBlogPage() {
           <br />
           <label>Description:-</label>
           <br />
-          <input onChange={changeHandler} name="desc"></input>
+          <textarea onChange={changeHandler} name="desc"></textarea>
           <br />
           <br />
           <label>Photo Upload:-</label>

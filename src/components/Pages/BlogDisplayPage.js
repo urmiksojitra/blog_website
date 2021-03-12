@@ -82,7 +82,7 @@ function BlogDisplayPage() {
   const statusHandler = (id, Status) => {
     setLike({ ...likes, blog_id: id, status: Status, user_id: token });
   };
-
+ 
   return (
     <div>
       {user &&
@@ -91,21 +91,17 @@ function BlogDisplayPage() {
           return (
             <div
               className="col-md-3 p-3"
-              style={{ marginBottom: "15px", marginLeft: "30px" }}
+              style={{
+                marginBottom: "15px",
+                // marginLeft: "30px",
+                height: "600px",
+              }}
             >
               <Card
                 style={{ width: "300px" }}
-                // style={{
-                //   backgroundColor: "rgba(255, 255, 255, 0.0)",
-                //   border: 0,
-                // }}
-                headStyle={{
-                  backgroundColor: "rgba(F,F,F,1)",
-                  border: 0,
-                }}
                 cover={
                   <img
-                    style={{ height: "300px" }}
+                    style={{ height: "300px", height: "300px" }}
                     alt="example"
                     src={data.blogImgSrc}
                   />
@@ -172,6 +168,7 @@ function BlogDisplayPage() {
                   // description={data.desc}
                 ></Meta>
                 <ReactReadMoreReadLess
+                style={{width:'300px',height:'300px'}}
                   charLimit={40}
                   readMoreText={
                     <div className="readmore-title">{"...Read more"}</div>

@@ -23,7 +23,7 @@ class SidebarPage extends React.Component {
   render() {
     const { collapsed } = this.state;
     return (
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout style={{ minHeight: "auto" }}>
         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={[]} mode="inline">
